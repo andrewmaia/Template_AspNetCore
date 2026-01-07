@@ -6,19 +6,17 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProjectName.Infrastructure.PostgreSQL.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("CREATE TYPE order_status AS ENUM ('open', 'paid', 'canceled');");
-
             migrationBuilder.CreateTable(
                 name: "Order",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Status = table.Column<int>(type: "order_status", nullable: false),
+                    Status = table.Column<int>(type: "integer", nullable: false),
                     TotalAmount = table.Column<decimal>(type: "numeric", nullable: false)
                 },
                 constraints: table =>
@@ -32,8 +30,6 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Order");
-
-            migrationBuilder.Sql("DROP TYPE order_status;");
         }
     }
 }

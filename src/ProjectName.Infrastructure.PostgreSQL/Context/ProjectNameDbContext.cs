@@ -16,9 +16,11 @@ public class ProjectNameDbContext:DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasPostgresEnum<OrderStatus>("order_status");
+
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(ProjectNameDbContext).Assembly);
+
+        base.OnModelCreating(modelBuilder);
     }
 
     public DbSet<OrderEntity> Orders { get; set; }

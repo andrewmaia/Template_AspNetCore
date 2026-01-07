@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.11">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +19,10 @@
     <ProjectReference Include="..\ProjectName.Application\ProjectName.Application.csproj" />
     <ProjectReference Include="..\ProjectName.CrossCutting.Utils\ProjectName.CrossCutting.Utils.csproj" />
     <ProjectReference Include="..\ProjectName.Domain\ProjectName.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

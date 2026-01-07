@@ -20,7 +20,6 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
                 .HasAnnotation("ProductVersion", "9.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "order_status", "order_status", new[] { "open", "paid", "canceled" });
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("ProjectName.Infrastructure.PostgreSQL.Entities.OrderEntity", b =>
@@ -30,7 +29,7 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<int>("Status")
-                        .HasColumnType("order_status");
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("numeric");
