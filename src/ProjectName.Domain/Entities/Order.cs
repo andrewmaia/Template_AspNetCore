@@ -25,7 +25,7 @@ public class Order
     public void Pay()
     {
         if (Status != OrderStatus.Open)
-            throw new Exception("Pedido inválido");
+            throw new InvalidOperationException("Pedido inválido");
 
         Status = OrderStatus.Paid;
     }
