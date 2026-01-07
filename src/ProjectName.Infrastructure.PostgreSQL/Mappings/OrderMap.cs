@@ -14,5 +14,7 @@ internal class OrderMap : IEntityTypeConfiguration<OrderEntity>
         builder.Property(x => x.Status)
             .HasColumnType("order_status")
             .IsRequired();
+        builder.Property(x => x.TotalAmount)
+            .IsRequired();
     }
 }
