@@ -4,13 +4,23 @@ namespace ProjectName.Domain.Entities;
 
 public class Order
 {
-    public Order(string id, OrderStatus status )
+    public Order(OrderStatus status, decimal totalAmount)
     {
-        Id = id;
+        Id = Guid.NewGuid();
         Status = status;
+        TotalAmount = totalAmount;
     }
-    public string Id { get; set; }
-    public OrderStatus Status { get; set; }
+
+    public Order(Guid id, OrderStatus status,  decimal totalAmount)
+    {
+        Id =id;
+        Status = status;
+        TotalAmount = totalAmount;
+    }
+    public Guid Id { get; private set; }
+    public OrderStatus Status { get; private set; }
+
+    public decimal TotalAmount { get; private set; }
 
     public void Pay()
     {

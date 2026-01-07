@@ -15,21 +15,28 @@ public class OrderRepository: IOrderRepository
         _db = db;
     }
 
+    private Order ToDomain(OrderEntity entity) => new Order(entity.Id,(OrderStatus)entity.Status,entity.TotalAmount);
 
-    private Order ToDomain(OrderEntity entity) => new Order( entity.Id,(OrderStatus)entity.Status);
-
-    private OrderEntity ToEntity(Order order)=> new OrderEntity ( order.Id,(int)order.Status);
+    private OrderEntity ToEntity(Order domain)=> new OrderEntity (domain.Id,(int)domain.Status, domain.TotalAmount);
 
     public void Add(Order order)
     {
         var entity = ToEntity(order);
         _db.Orders.Add(entity);
-        _db.SaveChanges();
     }
 
     public Order? GetById(int id)
     {
         var entity = _db.Orders.Find(id);
         return entity == null ? null : ToDomain(entity);
+    }
+
+    public IEnumerable<Order> GetOpenOrders()
+    {
+        return _db.Orders
+            .Where(o => o.Status == (int)OrderStatus.Open)
+            .OrderBy(o => o.Id)
+            .Select(ToDomain)
+            .ToList();
     }
 }

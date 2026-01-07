@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="EventHandlers\" />
     <Folder Include="DTOs\" />
-    <Folder Include="UsesCases\CreateOrder\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjectName.Domain.Entities;
 
 namespace ProjectName.Application.Interfaces.Repositories;
 
 public interface IOrderRepository
 {
+
+    void Add(Order order);
+    Order? GetById(int id);
+    IEnumerable<Order> GetOpenOrders();
 }
