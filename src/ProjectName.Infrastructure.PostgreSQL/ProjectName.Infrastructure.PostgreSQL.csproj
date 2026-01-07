@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectName.Application\ProjectName.Application.csproj" />
+    <ProjectReference Include="..\ProjectName.CrossCutting.Utils\ProjectName.CrossCutting.Utils.csproj" />
     <ProjectReference Include="..\ProjectName.Domain\ProjectName.Domain.csproj" />
   </ItemGroup>
 
