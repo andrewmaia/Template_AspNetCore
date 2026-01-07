@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddPostgreSQL(builder.Configuration);
 builder.Services.AddOpenApi();
 builder.Services.AddApplication();
+builder.Services.AddDomainServices();
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddApplication();
 
 
 var app = builder.Build();

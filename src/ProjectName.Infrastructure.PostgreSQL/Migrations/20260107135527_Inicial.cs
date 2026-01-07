@@ -6,13 +6,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProjectName.Infrastructure.PostgreSQL.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterDatabase()
-                .Annotation("Npgsql:Enum:order_status.order_status", "open,paid,canceled");
+            migrationBuilder.Sql("CREATE TYPE order_status AS ENUM ('open', 'paid', 'canceled');");
 
             migrationBuilder.CreateTable(
                 name: "Order",
@@ -33,6 +32,8 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Order");
+
+            migrationBuilder.Sql("DROP TYPE order_status;");
         }
     }
 }

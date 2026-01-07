@@ -12,8 +12,8 @@ using ProjectName.Infrastructure.PostgreSQL.Context;
 namespace ProjectName.Infrastructure.PostgreSQL.Migrations
 {
     [DbContext(typeof(ProjectNameDbContext))]
-    [Migration("20260107015107_Initial")]
-    partial class Initial
+    [Migration("20260107135527_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
