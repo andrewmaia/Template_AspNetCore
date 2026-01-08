@@ -18,7 +18,7 @@ public class OrdersController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateOrderRequest request)
     {
-        var orderId = await _useCase.Execute(
+        var orderId = await _useCase.ExecuteAsync(
             request.TotalAmount
         );
 

@@ -19,7 +19,7 @@ public class CreateOrderUseCase
         _orderService = orderService;
     }
 
-    public async Task<Guid> Execute(decimal totalAmount)
+    public async Task<Guid> ExecuteAsync(decimal totalAmount)
     {
 
         var finalAmount = _orderService.ApplyDiscount(totalAmount);
