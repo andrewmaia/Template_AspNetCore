@@ -1,4 +1,5 @@
-﻿using ProjectName.Application.Common;
+﻿using ProjectName.Api.Contracts;
+using ProjectName.Application.Common;
 
 namespace ProjectName.Api.Extensions;
 
@@ -11,11 +12,11 @@ public static class ResultResponseExtensions
                                    .Where(p => p.DeclaringType != typeof(ResultResponse))
                                    .ToDictionary(p => p.Name, p => p.GetValue(result));
 
-        return new
+        return new ApiResponse
         {
-            success = result.IsSuccess,
-            data = result.IsSuccess ? dataProperties : null,
-            errors = result.IsSuccess ? null : result.Errors
+            Success = result.IsSuccess,
+            Data = result.IsSuccess ? dataProperties : null,
+            Errors = result.IsSuccess ? null : result.Errors
         };
     }
 }

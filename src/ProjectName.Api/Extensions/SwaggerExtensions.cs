@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace ProjectName.Api.Extensions;
 
@@ -15,6 +16,16 @@ public static class SwaggerExtensions
                 Version = "v1",
                 Description = "Documentação automática de ProjectName API"
             });
+
+            // pega o caminho do arquivo XML
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+            // inclui os comentários XML
+            c.IncludeXmlComments(xmlPath);
+
+            // opcional: habilitar atributos Swagger
+            c.EnableAnnotations();
         });
 
         return services;

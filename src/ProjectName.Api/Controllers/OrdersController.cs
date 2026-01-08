@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjectName.Api.Contracts;
 using ProjectName.Api.Contracts.Orders;
-using ProjectName.Application.Execution;
 using ProjectName.Api.Extensions;
+using ProjectName.Application.Execution;
 using ProjectName.Application.UsesCases.CreateOrder;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ProjectName.Api.Controllers;
 
@@ -18,6 +20,11 @@ public class OrdersController : ControllerBase
     }
 
     [HttpPost]
+    [SwaggerOperation(
+    Summary = "Create a new order",
+    Description = "Creates an order and returns a generic response wrapper.")]
+    [SwaggerResponse(StatusCodes.Status201Created, "Order created successfully",typeof(ApiResponse))]
+    [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid data", typeof(ApiResponse))]
     public async Task<IActionResult> Create([FromBody] CreateOrderApiRequest apiRequest)
     {
         var request = new CreateOrderRequest(apiRequest.TotalAmount);
