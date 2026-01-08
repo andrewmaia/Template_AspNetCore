@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectName.Api.Contracts.Orders;
 using ProjectName.Application.Execution;
+using ProjectName.Api.Extensions;
 using ProjectName.Application.UsesCases.CreateOrder;
 
 namespace ProjectName.Api.Controllers;
@@ -23,9 +24,9 @@ public class OrdersController : ControllerBase
         var result = await _executor.ExecuteAsync<CreateOrderRequest, CreateOrderResponse> (request);
 
         if (!result.IsSuccess)
-            return BadRequest(result.Errors);
+            return BadRequest(result.ToApiResponse());
 
-        return Created(string.Empty, result.OrderId);
+        return Created(string.Empty, result.ToApiResponse());
     }
 
-}
+}                                                                                                                   
