@@ -1,7 +1,10 @@
+using Microsoft.OpenApi.Models;
 using ProjectName.Application;
 using ProjectName.Infrastructure.PostgreSQL;
 using ProjectName.Infrastructure.Services;
 using ProjectName.Workers;
+using ProjectName.Api.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,15 +17,12 @@ builder.Services.AddApplication();
 builder.Services.AddDomainServices();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddQuartz(builder.Configuration);
-
+builder.Services.AddSwaggerDocumentation();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+
+app.UseSwaggerDocumentation();
 
 app.UseHttpsRedirection();
 
