@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProjectName.Api.Requests;
-using ProjectName.Application.UsesCases;
+using ProjectName.Api.Contracts.Orders;
+using ProjectName.Application.Execution;
+using ProjectName.Application.UsesCases.CreateOrder;
 
 namespace ProjectName.Api.Controllers;
 
@@ -8,21 +9,23 @@ namespace ProjectName.Api.Controllers;
 [Route("api/orders")]
 public class OrdersController : ControllerBase
 {
-    private readonly CreateOrderUseCase _useCase;
+    private readonly RequestExecutor _executor;
 
-    public OrdersController(CreateOrderUseCase useCase)
+    public OrdersController(RequestExecutor executor)
     {
-        _useCase = useCase;
+        _executor = executor;
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateOrderRequest request)
+    public async Task<IActionResult> Create([FromBody] CreateOrderApiRequest apiRequest)
     {
-        var orderId = await _useCase.ExecuteAsync(
-            request.TotalAmount
-        );
+        var request = new CreateOrderRequest(apiRequest.TotalAmount);
+        var result = await _executor.ExecuteAsync<CreateOrderRequest, CreateOrderResponse> (request);
 
-        return Created(string.Empty, orderId);
+        if (!result.IsSuccess)
+            return BadRequest(result.Errors);
+
+        return Created(string.Empty, result.OrderId);
     }
 
 }
