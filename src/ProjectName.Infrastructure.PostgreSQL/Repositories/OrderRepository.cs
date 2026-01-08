@@ -25,7 +25,7 @@ public class OrderRepository: IOrderRepository
         _db.Orders.Add(entity);
     }
 
-    public Order? GetById(int id)
+    public Order? GetById(Guid id)
     {
         var entity = _db.Orders.Find(id);
         return entity == null ? null : ToDomain(entity);
@@ -35,7 +35,6 @@ public class OrderRepository: IOrderRepository
     {
         return _db.Orders
             .Where(o => o.Status == (int)OrderStatus.Open)
-            .OrderBy(o => o.Id)
             .Select(ToDomain)
             .ToList();
     }

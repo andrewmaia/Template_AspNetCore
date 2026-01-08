@@ -6,6 +6,6 @@ public interface IOrderRepository
 {
 
     void Add(Order order);
-    Order? GetById(int id);
+    Order? GetById(Guid id);
     IEnumerable<Order> GetOpenOrders();
 }
