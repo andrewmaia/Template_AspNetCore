@@ -1,5 +1,6 @@
-﻿using ProjectName.Application.Interfaces;
-using ProjectName.Application.Interfaces.Repositories;
+﻿using ProjectName.Application.ExternalServices.PostalCode;
+using ProjectName.Application.Interfaces;
+using ProjectName.Application.Repositories;
 using ProjectName.Domain.Entities;
 using ProjectName.Domain.Enums;
 using ProjectName.Domain.Services;
@@ -21,9 +22,7 @@ public class CreateOrderUseCase : IUseCase<CreateOrderRequest, CreateOrderRespon
 
     public async Task<CreateOrderResponse> ExecuteAsync(CreateOrderRequest request)
     {
-
         var finalAmount = _orderService.ApplyDiscount(request.TotalAmount);
-
         var order = new Order(OrderStatus.Open, finalAmount);
 
         _orderRepository.Add(order);

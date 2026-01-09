@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectName.Application.Interfaces;
-using ProjectName.Application.Interfaces.Repositories;
+using ProjectName.Application.Repositories;
 using ProjectName.Infrastructure.PostgreSQL.Context;
 using ProjectName.Infrastructure.PostgreSQL.Repositories;
 

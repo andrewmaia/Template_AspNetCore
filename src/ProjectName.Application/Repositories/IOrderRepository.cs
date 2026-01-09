@@ -1,6 +1,6 @@
 ﻿using ProjectName.Domain.Entities;
 
-namespace ProjectName.Application.Interfaces.Repositories;
+namespace ProjectName.Application.Repositories;
 
 public interface IOrderRepository
 {

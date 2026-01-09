@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProjectName.Application\ProjectName.Application.csproj" />
     <ProjectReference Include="..\ProjectName.CrossCutting.Utils\ProjectName.CrossCutting.Utils.csproj" />
+    <ProjectReference Include="..\ProjectName.ExternalServices.Example\ProjectName.ExternalServices.ViaCEP.csproj" />
     <ProjectReference Include="..\ProjectName.Infrastructure.PostgreSQL\ProjectName.Infrastructure.PostgreSQL.csproj" />
     <ProjectReference Include="..\ProjectName.Infrastructure.Services\ProjectName.Infrastructure.Services.csproj" />
     <ProjectReference Include="..\ProjectName.Workers\ProjectName.Workers.csproj" />

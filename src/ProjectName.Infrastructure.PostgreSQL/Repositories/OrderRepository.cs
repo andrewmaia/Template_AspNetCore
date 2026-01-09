@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Interfaces.Repositories;
+﻿using ProjectName.Application.Repositories;
 using ProjectName.Domain.Entities;
 using ProjectName.Domain.Enums;
 using ProjectName.Infrastructure.PostgreSQL.Context;

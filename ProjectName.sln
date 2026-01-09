@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.Workers", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.CrossCutting.Utils", "src\ProjectName.CrossCutting.Utils\ProjectName.CrossCutting.Utils.csproj", "{7FEF4FC7-4262-4BF3-A93D-9C11FC955BE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.ExternalServices.Example", "src\ProjectName.ExternalServices.Example\ProjectName.ExternalServices.Example.csproj", "{D0B4D27E-9E6A-4C4F-810D-FCBCF870F521}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.ExternalServices.ViaCEP", "src\ProjectName.ExternalServices.Example\ProjectName.ExternalServices.ViaCEP.csproj", "{D0B4D27E-9E6A-4C4F-810D-FCBCF870F521}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.Infrastructure.PostgreSQL", "src\ProjectName.Infrastructure.PostgreSQL\ProjectName.Infrastructure.PostgreSQL.csproj", "{AFF0C5B5-D0E1-49FE-ADDC-EED43F240CC9}"
 EndProject
