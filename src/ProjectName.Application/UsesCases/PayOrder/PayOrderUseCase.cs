@@ -1,4 +1,5 @@
-﻿using ProjectName.Application.Common.Events;
+﻿using ProjectName.Application.Common;
+using ProjectName.Application.Common.Events;
 using ProjectName.Application.Interfaces;
 using ProjectName.Application.Repositories;
 
@@ -23,8 +24,9 @@ public class PayOrderUseCase : IUseCase<PayOrderRequest, PayOrderResponse>
         var response = new PayOrderResponse();
         if (order is null)
         {
+            response.BusinessError = BusinessError.NotFound;
             response.AddError($"Order with id '{request.OrderId}' was not found.");
-             return response;
+            return response;
         }
 
         order.Pay();

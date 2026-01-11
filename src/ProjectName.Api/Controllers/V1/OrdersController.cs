@@ -2,6 +2,7 @@
 using ProjectName.Api.Contracts;
 using ProjectName.Api.Contracts.Orders;
 using ProjectName.Api.Extensions;
+using ProjectName.Application.Common;
 using ProjectName.Application.Execution;
 using ProjectName.Application.UsesCases.CreateOrder;
 using ProjectName.Application.UsesCases.PayOrder;
@@ -49,7 +50,13 @@ public class OrdersController : ControllerBase
         var result = await _executor.ExecuteAsync<PayOrderRequest, PayOrderResponse>(request);
 
         if (!result.IsSuccess)
-            return NotFound(result.ToApiResponse());
+        {
+            return result.BusinessError switch
+            {
+                BusinessError.NotFound => NotFound(result.ToApiResponse()),
+                _ => BadRequest(result.ToApiResponse())
+            };
+        }
 
         return Ok(result.ToApiResponse());
     }
