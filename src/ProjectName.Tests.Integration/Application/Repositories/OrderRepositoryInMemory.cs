@@ -24,7 +24,7 @@ public class OrderRepositoryInMemory : IOrderRepository
         _orders.Add(ToEntity(order));
     }
 
-    public async Task<Order?> GetById(Guid id)
+    public async Task<Order?> GetByIdAsync(Guid id)
     {
         var entity = await _orders.FindAsync(id);
         return entity == null ? null : ToDomain(entity);

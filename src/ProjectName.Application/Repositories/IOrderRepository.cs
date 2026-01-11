@@ -6,6 +6,6 @@ public interface IOrderRepository
 {
 
     void Add(Order order);
-    Task<Order?> GetById(Guid id);
+    Task<Order?> GetByIdAsync(Guid id);
     IEnumerable<Order> GetOpenOrders();
 }

@@ -19,7 +19,7 @@ public class PayOrderUseCase : IUseCase<PayOrderRequest, PayOrderResponse>
 
     public async Task<PayOrderResponse> ExecuteAsync(PayOrderRequest request)
     {
-        var order = await _orderRepository.GetById(request.OrderId);
+        var order = await _orderRepository.GetByIdAsync(request.OrderId);
         var response = new PayOrderResponse();
         if (order is null)
         {

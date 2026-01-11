@@ -35,7 +35,7 @@ public class CreateOrderUseCaseTests
         var response = await useCase.ExecuteAsync(request);
 
         // Assert
-        var savedOrder = orderRepository.GetById(response.OrderId!.Value);
+        var savedOrder =await  orderRepository.GetByIdAsync(response.OrderId!.Value);
 
         Assert.NotNull(savedOrder);
         Assert.Equal(OrderStatus.Open, savedOrder!.Status);
@@ -69,7 +69,7 @@ public class CreateOrderUseCaseTests
         var response = await useCase.ExecuteAsync(request);
 
         // Assert
-        var savedOrder =  orderRepository.GetById(response.OrderId!.Value);
+        var savedOrder = await  orderRepository.GetByIdAsync(response.OrderId!.Value);
 
         Assert.NotNull(savedOrder);
         Assert.Equal(OrderStatus.Open, savedOrder!.Status);

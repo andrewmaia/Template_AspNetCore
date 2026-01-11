@@ -25,7 +25,7 @@ public class OrderRepository: IOrderRepository
         _db.Orders.Add(entity);
     }
 
-    public async Task<Order?> GetById(Guid id)
+    public async Task<Order?> GetByIdAsync(Guid id)
     {
         var entity = await _db.Orders.FindAsync(id);
         return entity == null ? null : ToDomain(entity);
