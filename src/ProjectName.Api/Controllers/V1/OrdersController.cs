@@ -4,9 +4,10 @@ using ProjectName.Api.Contracts.Orders;
 using ProjectName.Api.Extensions;
 using ProjectName.Application.Execution;
 using ProjectName.Application.UsesCases.CreateOrder;
+using ProjectName.Application.UsesCases.PayOrder;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace ProjectName.Api.Controllers;
+namespace ProjectName.Api.Controllers.V1;
 
 [ApiController]
 [Route("api/orders")]
@@ -34,6 +35,23 @@ public class OrdersController : ControllerBase
             return BadRequest(result.ToApiResponse());
 
         return Created(string.Empty, result.ToApiResponse());
+    }
+
+    [HttpPost("Pay")]
+    [SwaggerOperation(
+    Summary = "Pay an order",
+    Description = "Pay an order and returns a generic response wrapper.")]
+    [SwaggerResponse(StatusCodes.Status201Created, "Order paid successfully", typeof(ApiResponse))]
+    [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid data", typeof(ApiResponse))]
+    public async Task<IActionResult> PayOrder([FromBody] PayOrderApiRequest apiRequest)
+    {
+        var request = new PayOrderRequest(apiRequest.OrderId);
+        var result = await _executor.ExecuteAsync<PayOrderRequest, PayOrderResponse>(request);
+
+        if (!result.IsSuccess)
+            return NotFound(result.ToApiResponse());
+
+        return Ok(result.ToApiResponse());
     }
 
 }                                                                                                                   

@@ -1,0 +1,10 @@
+﻿namespace ProjectName.Application.UsesCases.PayOrder;
+public class PayOrderRequest
+{
+    public Guid OrderId { get; }
+
+    public PayOrderRequest(Guid orderId)
+    {
+        OrderId = orderId;
+    }
+}

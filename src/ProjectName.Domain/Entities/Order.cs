@@ -1,8 +1,10 @@
-﻿using ProjectName.Domain.Enums;
+﻿using ProjectName.Domain.DomainEvents;
+using ProjectName.Domain.DomainEvents.Common;
+using ProjectName.Domain.Enums;
 
 namespace ProjectName.Domain.Entities;
 
-public class Order
+public class Order: AggregateRoot
 {
     public Order(OrderStatus status, decimal totalAmount)
     {
@@ -28,5 +30,7 @@ public class Order
             throw new InvalidOperationException("Pedido inválido");
 
         Status = OrderStatus.Paid;
+
+        AddDomainEvent(new OrderPaidDomainEvent(Id));
     }
 }
