@@ -18,7 +18,9 @@ public static class DependencyInjection
         services.Configure<AzureBlobStorageOptions>(configuration.GetSection("AzureBlobStorage"));
         services.AddScoped<IFileStorage, AzureBlobStorage>();
 
-        // outros serviços de infra
+
+        // Observability
+        services.AddSingleton<IObservability, AppInsightsObservability>();
 
         return services;
     }
