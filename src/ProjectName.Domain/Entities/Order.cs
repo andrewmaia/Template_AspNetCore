@@ -27,7 +27,7 @@ public class Order: AggregateRoot
     public void Pay()
     {
         if (Status != OrderStatus.Open)
-            throw new InvalidOperationException("Pedido inválido");
+            throw new InvalidOperationException("Invalid Order");
 
         Status = OrderStatus.Paid;
 

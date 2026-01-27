@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using ProjectName.Workers.Jobs;
 using ProjectName.Workers.Messaging;
+using ProjectName.Workers.Messaging.Handlers;
 using Quartz;
 
 namespace ProjectName.Workers;
@@ -30,6 +31,8 @@ public static class DependencyInjection
 
         // -------- Azure Service Bus Listener --------
         services.AddHostedService<AzureServiceBusQueueListener>();
+        services.AddScoped<OrderPaidMessageHandler>();
+
 
         return services;
     }

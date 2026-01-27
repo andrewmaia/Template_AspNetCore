@@ -59,28 +59,38 @@ public sealed class AzureServiceBusQueueListener : BackgroundService
 
     private async Task OnMessage(ProcessMessageEventArgs args)
     {
-        // fila que disparou a mensagem
-        var queue = args.EntityPath;
-
-        switch (queue)
+        try
         {
-            case "orders":
-                {
-                    var body = args.Message.Body.ToString();
+            switch (args.EntityPath)
+            {
+                case "orders":
+                    {
+                        var body = args.Message.Body.ToString();
 
-                    var message = JsonSerializer.Deserialize<OrderPaidMessage>(body);
-                    if (message is null)
-                        throw new InvalidOperationException("Invalid Message.");
+                        var message = JsonSerializer.Deserialize<OrderPaidMessage>( body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+                            ?? throw new InvalidOperationException("Invalid message.");
 
-                    var handler = _serviceProvider.GetRequiredService<OrderPaidMessageHandler>();
-                    await handler.HandleAsync(message, args.CancellationToken);
 
-                    break;
-                }
+                        using var scope = _serviceProvider.CreateScope();
+                        var handler = scope.ServiceProvider.GetRequiredService<OrderPaidMessageHandler>();
+                        await handler.HandleAsync(message, args.CancellationToken);
+
+                        await args.CompleteMessageAsync(args.Message);
+                        return;
+                    }
+
+                default:
+                    // não reconheceu a fila -> não completa (vai retry/DLQ conforme config)
+                    return;
+            }
         }
-
-        await args.CompleteMessageAsync(args.Message);
+        catch
+        {
+            await args.AbandonMessageAsync(args.Message);
+            throw;
+        }
     }
+
 
     private Task OnError(ProcessErrorEventArgs args)
     {
