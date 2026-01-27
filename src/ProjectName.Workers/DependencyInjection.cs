@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectName.Workers.Jobs;
+using ProjectName.Workers.Messaging;
 using Quartz;
 
 namespace ProjectName.Workers;
@@ -10,6 +11,7 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        // -------- Quartz Jobs --------
         var jobConfig = configuration
             .GetSection(ExampleJobConfiguration.SectionName)
             .Get<ExampleJobConfiguration>();
@@ -25,6 +27,9 @@ public static class DependencyInjection
         });
 
         services.AddQuartzHostedService(o => o.WaitForJobsToComplete = true);
+
+        // -------- Azure Service Bus Listener --------
+        services.AddHostedService<AzureServiceBusQueueListener>();
 
         return services;
     }

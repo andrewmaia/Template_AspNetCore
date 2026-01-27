@@ -13,7 +13,8 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         //Message Bus
-        services.AddScoped<IMessageBus, AzureServiceBusMessageBus>();
+        services.AddSingleton<IMessageBus, AzureServiceBusMessageBus>();
+
         // File storage
         services.Configure<AzureBlobStorageOptions>(configuration.GetSection("AzureBlobStorage"));
         services.AddScoped<IFileStorage, AzureBlobStorage>();
