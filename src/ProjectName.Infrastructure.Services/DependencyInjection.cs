@@ -12,10 +12,16 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddScoped<IMessageBus, AzureServiceBusMessageBus>();
+        //Message Bus
+        services.AddSingleton<IMessageBus, AzureServiceBusMessageBus>();
+
+        // File storage
+        services.Configure<AzureBlobStorageOptions>(configuration.GetSection("AzureBlobStorage"));
         services.AddScoped<IFileStorage, AzureBlobStorage>();
 
-        // outros serviços de infra
+
+        // Observability
+        services.AddSingleton<IObservability, AppInsightsObservability>();
 
         return services;
     }

@@ -1,9 +1,9 @@
-using  ProjectName.ExternalServices.ViaCEP;
+using ProjectName.Api.Extensions;
 using ProjectName.Application;
+using  ProjectName.ExternalServices.ViaCEP;
 using ProjectName.Infrastructure.PostgreSQL;
 using ProjectName.Infrastructure.Services;
 using ProjectName.Workers;
-using ProjectName.Api.Extensions;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +19,8 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddQuartz(builder.Configuration);
 builder.Services.AddSwaggerDocumentation();
 builder.Services.AddPostalCodeService(builder.Configuration);
+builder.Services.AddApplicationInsights(builder.Configuration);
+builder.Logging.AddApplicationInsights();
 
 var app = builder.Build();
 
