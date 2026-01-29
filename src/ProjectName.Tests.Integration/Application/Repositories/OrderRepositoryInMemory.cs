@@ -12,7 +12,7 @@ public class OrderRepositoryInMemory : IOrderRepository
 
     private Order ToDomain(OrderEntity entity) => new Order(entity.Id, (OrderStatus)entity.Status, entity.TotalAmount);
 
-    private OrderEntity ToEntity(Order domain) => new OrderEntity(domain.Id, (int)domain.Status, domain.TotalAmount);
+    private OrderEntity ToEntity(Order domain) => new OrderEntity(domain.Id, domain.Status, domain.TotalAmount);
 
     public OrderRepositoryInMemory(DbContext context)
     {

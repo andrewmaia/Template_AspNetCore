@@ -20,6 +20,8 @@ public class ProjectNameDbContext:DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(ProjectNameDbContext).Assembly);
 
+        modelBuilder.HasPostgresEnum<OrderStatus>();
+
         base.OnModelCreating(modelBuilder);
     }
 

@@ -11,12 +11,15 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("Npgsql:Enum:order_status", "open,paid,canceled");
+
             migrationBuilder.CreateTable(
                 name: "Order",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Status = table.Column<int>(type: "integer", nullable: false),
+                    Status = table.Column<int>(type: "order_status", nullable: false),
                     TotalAmount = table.Column<decimal>(type: "numeric", nullable: false)
                 },
                 constraints: table =>
@@ -30,6 +33,8 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Order");
+
+            migrationBuilder.Sql("DROP TYPE IF EXISTS order_status;");
         }
     }
 }

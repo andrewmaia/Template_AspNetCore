@@ -30,8 +30,8 @@ public static class DependencyInjection
         services.AddQuartzHostedService(o => o.WaitForJobsToComplete = true);
 
         // -------- Azure Service Bus Listener --------
-        services.AddHostedService<AzureServiceBusQueueListener>();
-        services.AddScoped<OrderPaidMessageHandler>();
+        //services.AddHostedService<AzureServiceBusQueueListener>();
+        //services.AddScoped<OrderPaidMessageHandler>();
 
 
         return services;

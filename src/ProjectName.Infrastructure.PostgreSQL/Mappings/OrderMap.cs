@@ -12,6 +12,7 @@ internal class OrderMap : IEntityTypeConfiguration<OrderEntity>
         builder.ToTable("Order");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Status)
+            .HasColumnType("order_status")
             .IsRequired();
         builder.Property(x => x.TotalAmount)
             .IsRequired();
