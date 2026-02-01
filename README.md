@@ -8,10 +8,20 @@ Este repositório fornece uma estrutura inicial em **C# / ASP.NET Core**, servin
 ## Tecnologias
 - ASP.NET Core  
 - C#  
-- .NET
+- .NET  
+- PostgreSQL
 
-## Como usar
+## Pré-requisitos
+- .NET SDK instalado
+- Um banco **PostgreSQL** disponível (local ou remoto)
+
+## ⚙️ Configuração do banco
+1. Crie (ou escolha) um database no PostgreSQL
+2. Configure a **connection string** do projeto para apontar para esse banco  
+   (ex.: em `appsettings.json`, `appsettings.Development.json` ou via variável de ambiente)
+
+## Rodando migrations
+Após configurar a connection string, aplique as migrations para criar/atualizar o schema do banco:
+
 ```bash
-git clone https://github.com/andrewmaia/Template_AspNetCore.git
-cd Template_AspNetCore
-dotnet run
+dotnet ef database update
