@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.UsesCases.SendEmailToOpenOrders;
+﻿namespace ProjectName.Application.UseCases.SendEmailToOpenOrders;
 public class SendEmailToOpenOrdersUseCase : IUseCase<SendEmailToOpenOrdersRequest, SendEmailToOpenOrdersResponse>
 {
     public async Task<SendEmailToOpenOrdersResponse> ExecuteAsync(SendEmailToOpenOrdersRequest request)

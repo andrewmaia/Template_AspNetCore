@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.UsesCases.CreateOrder;
+﻿namespace ProjectName.Application.UseCases.CreateOrder;
 public  class CreateOrderRequest
 {
     public decimal TotalAmount { get; }

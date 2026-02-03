@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using ProjectName.Application.UsesCases.ProcessOrderPaid;
+using ProjectName.Application.UseCases.ProcessOrderPaid;
 
 
 public class ProcessOrderPaidRequestValidator : AbstractValidator<ProcessOrderPaidRequest>

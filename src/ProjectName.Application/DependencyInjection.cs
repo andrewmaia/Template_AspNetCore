@@ -3,10 +3,10 @@ using Microsoft.Extensions.DependencyInjection;
 using ProjectName.Application.Common.Events;
 using ProjectName.Application.EventHandlers;
 using ProjectName.Application.Execution;
-using ProjectName.Application.UsesCases.CreateOrder;
-using ProjectName.Application.UsesCases.PayOrder;
-using ProjectName.Application.UsesCases.ProcessOrderPaid;
-using ProjectName.Application.UsesCases.SendEmailToOpenOrders;
+using ProjectName.Application.UseCases.CreateOrder;
+using ProjectName.Application.UseCases.PayOrder;
+using ProjectName.Application.UseCases.ProcessOrderPaid;
+using ProjectName.Application.UseCases.SendEmailToOpenOrders;
 using ProjectName.Domain.DomainEvents;
 using ProjectName.Domain.Services;
 

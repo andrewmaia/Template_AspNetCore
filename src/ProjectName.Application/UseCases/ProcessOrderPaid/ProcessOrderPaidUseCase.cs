@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.UsesCases.ProcessOrderPaid;
+﻿namespace ProjectName.Application.UseCases.ProcessOrderPaid;
 
 public class ProcessOrderPaidUseCase : IUseCase<ProcessOrderPaidRequest, ProcessOrderPaidResponse>
 {

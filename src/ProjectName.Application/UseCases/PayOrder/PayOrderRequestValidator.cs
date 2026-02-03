@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 
 
-namespace ProjectName.Application.UsesCases.PayOrder;
+namespace ProjectName.Application.UseCases.PayOrder;
 public class PayOrderRequestValidator : AbstractValidator<PayOrderRequest>
 {
     public PayOrderRequestValidator()

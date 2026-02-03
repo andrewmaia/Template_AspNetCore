@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using ProjectName.Application.UsesCases.CreateOrder;
+using ProjectName.Application.UseCases.CreateOrder;
 using ProjectName.Domain.Enums;
 using ProjectName.Domain.Services;
 using ProjectName.Infrastructure.PostgreSQL;

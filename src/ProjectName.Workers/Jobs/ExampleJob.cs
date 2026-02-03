@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using ProjectName.Application.Execution;
-using ProjectName.Application.UsesCases.CreateOrder;
-using ProjectName.Application.UsesCases.SendEmailToOpenOrders;
+using ProjectName.Application.UseCases.CreateOrder;
+using ProjectName.Application.UseCases.SendEmailToOpenOrders;
 using Quartz;
 
 namespace ProjectName.Workers.Jobs;

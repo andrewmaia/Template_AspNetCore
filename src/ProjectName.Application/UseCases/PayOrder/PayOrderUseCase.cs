@@ -4,7 +4,7 @@ using ProjectName.Application.Interfaces;
 using ProjectName.Application.Repositories;
 
 
-namespace ProjectName.Application.UsesCases.PayOrder;
+namespace ProjectName.Application.UseCases.PayOrder;
 public class PayOrderUseCase : IUseCase<PayOrderRequest, PayOrderResponse>
 {
     private readonly IOrderRepository _orderRepository;

@@ -4,8 +4,8 @@ using ProjectName.Api.Contracts.Orders;
 using ProjectName.Api.Extensions;
 using ProjectName.Application.Common;
 using ProjectName.Application.Execution;
-using ProjectName.Application.UsesCases.CreateOrder;
-using ProjectName.Application.UsesCases.PayOrder;
+using ProjectName.Application.UseCases.CreateOrder;
+using ProjectName.Application.UseCases.PayOrder;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace ProjectName.Api.Controllers.V1;

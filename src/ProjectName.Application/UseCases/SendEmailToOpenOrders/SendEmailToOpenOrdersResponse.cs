@@ -1,6 +1,6 @@
 ﻿using ProjectName.Application.Common;
 
-namespace ProjectName.Application.UsesCases.SendEmailToOpenOrders;
+namespace ProjectName.Application.UseCases.SendEmailToOpenOrders;
 public class SendEmailToOpenOrdersResponse : ResultResponse
 {
 }

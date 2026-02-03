@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using ProjectName.Application.UsesCases.CreateOrder;
+using ProjectName.Application.UseCases.CreateOrder;
 
 public class CreateOrderRequestValidator
     : AbstractValidator<CreateOrderRequest>

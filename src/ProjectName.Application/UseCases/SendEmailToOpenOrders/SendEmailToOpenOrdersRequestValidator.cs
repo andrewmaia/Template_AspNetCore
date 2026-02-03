@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using ProjectName.Application.UsesCases.SendEmailToOpenOrders;
+using ProjectName.Application.UseCases.SendEmailToOpenOrders;
 
 public class SendEmailToOpenOrdersRequestValidator
     : AbstractValidator<SendEmailToOpenOrdersRequest>

@@ -5,7 +5,7 @@ using ProjectName.Domain.Entities;
 using ProjectName.Domain.Enums;
 using ProjectName.Domain.Services;
 
-namespace ProjectName.Application.UsesCases.CreateOrder;
+namespace ProjectName.Application.UseCases.CreateOrder;
 
 public class CreateOrderUseCase : IUseCase<CreateOrderRequest, CreateOrderResponse>
 {

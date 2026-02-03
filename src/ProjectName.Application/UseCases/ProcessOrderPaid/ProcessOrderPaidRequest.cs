@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectName.Application.UsesCases.ProcessOrderPaid;
+namespace ProjectName.Application.UseCases.ProcessOrderPaid;
 
 public class ProcessOrderPaidRequest
 {

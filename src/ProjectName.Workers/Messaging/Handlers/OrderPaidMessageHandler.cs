@@ -1,6 +1,6 @@
 ﻿using ProjectName.Application.Execution;
 using ProjectName.Application.Messaging;
-using ProjectName.Application.UsesCases.ProcessOrderPaid;
+using ProjectName.Application.UseCases.ProcessOrderPaid;
 
 
 namespace ProjectName.Workers.Messaging.Handlers;
