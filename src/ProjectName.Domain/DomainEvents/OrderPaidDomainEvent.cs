@@ -1,4 +1,4 @@
-﻿using ProjectName.Domain.DomainEvents.Common;
+using ProjectName.Domain.DomainEvents.Common;
 using ProjectName.Domain.Entities;
 
 namespace ProjectName.Domain.DomainEvents;

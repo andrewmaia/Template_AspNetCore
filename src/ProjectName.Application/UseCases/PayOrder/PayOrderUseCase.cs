@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Common;
+using ProjectName.Application.Common;
 using ProjectName.Application.Common.Events;
 using ProjectName.Application.Interfaces;
 using ProjectName.Application.Repositories;

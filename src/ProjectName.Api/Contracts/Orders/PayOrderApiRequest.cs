@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Api.Contracts.Orders;
+namespace ProjectName.Api.Contracts.Orders;
 
 /// <summary>
 /// Represents the request data to pay an order.

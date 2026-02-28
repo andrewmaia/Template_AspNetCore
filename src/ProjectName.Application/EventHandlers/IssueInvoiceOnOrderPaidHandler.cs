@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Common.Events;
+using ProjectName.Application.Common.Events;
 using ProjectName.Domain.DomainEvents;
 
 namespace ProjectName.Application.EventHandlers;

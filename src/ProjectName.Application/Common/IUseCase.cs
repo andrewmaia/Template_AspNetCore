@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Common;
+using ProjectName.Application.Common;
 
 public interface IUseCase<in TRequest, TResponse> 
     where TResponse : ResultResponse, new()

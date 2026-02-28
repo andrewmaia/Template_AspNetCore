@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Json;
+using System.Net.Http.Json;
 using ProjectName.Application.ExternalServices.PostalCode;
 using ProjectName.ExternalServices.ViaCEP.Responses;
 

@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Interfaces;
+using ProjectName.Application.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 
 

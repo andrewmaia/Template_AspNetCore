@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using ProjectName.Application.Execution;
 using ProjectName.Application.UseCases.CreateOrder;
 using ProjectName.Application.UseCases.SendEmailToOpenOrders;

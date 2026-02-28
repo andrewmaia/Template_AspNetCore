@@ -1,11 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ProjectName.Domain.Enums;
-using ProjectName.Infrastructure.PostgreSQL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ProjectName.Domain.Entities;
 
 namespace ProjectName.Infrastructure.PostgreSQL.Context;
 
@@ -25,5 +20,5 @@ public class ProjectNameDbContext:DbContext
         base.OnModelCreating(modelBuilder);
     }
 
-    public DbSet<OrderEntity> Orders { get; set; }
+    public DbSet<Order> Orders { get; set; }
 }

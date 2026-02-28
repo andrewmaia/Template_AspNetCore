@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Execution;
+using ProjectName.Application.Execution;
 using ProjectName.Application.Messaging;
 using ProjectName.Application.UseCases.ProcessOrderPaid;
 

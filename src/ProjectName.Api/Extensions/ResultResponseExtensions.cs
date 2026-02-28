@@ -1,4 +1,4 @@
-﻿using ProjectName.Api.Contracts;
+using ProjectName.Api.Contracts;
 using ProjectName.Application.Common;
 
 namespace ProjectName.Api.Extensions;

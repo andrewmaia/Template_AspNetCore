@@ -1,4 +1,4 @@
-﻿using ProjectName.Domain.DomainEvents;
+using ProjectName.Domain.DomainEvents;
 using ProjectName.Domain.DomainEvents.Common;
 using ProjectName.Domain.Enums;
 

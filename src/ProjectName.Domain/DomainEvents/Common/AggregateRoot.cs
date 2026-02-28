@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Domain.DomainEvents.Common;
+namespace ProjectName.Domain.DomainEvents.Common;
 public abstract class AggregateRoot
 {
     private readonly List<IDomainEvent> _domainEvents = new();

@@ -1,15 +1,15 @@
 using ProjectName.Api.Extensions;
 using ProjectName.Application;
-using  ProjectName.ExternalServices.ViaCEP;
+using ProjectName.ExternalServices.ViaCEP;
 using ProjectName.Infrastructure.PostgreSQL;
 using ProjectName.Infrastructure.Services;
 using ProjectName.Workers;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddAzureKeyVault();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddPostgreSQL(builder.Configuration);
 builder.Services.AddOpenApi();

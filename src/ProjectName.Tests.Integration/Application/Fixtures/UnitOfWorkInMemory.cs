@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ProjectName.Application.Interfaces;
 
 namespace ProjectName.Tests.Integration.Application.Fixtures;

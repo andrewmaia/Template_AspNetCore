@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using ProjectName.Domain.Enums;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -19,7 +20,7 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Status = table.Column<int>(type: "order_status", nullable: false),
+                    Status = table.Column<OrderStatus>(type: "order_status", nullable: false),
                     TotalAmount = table.Column<decimal>(type: "numeric", nullable: false)
                 },
                 constraints: table =>
@@ -33,8 +34,6 @@ namespace ProjectName.Infrastructure.PostgreSQL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Order");
-
-            migrationBuilder.Sql("DROP TYPE IF EXISTS order_status;");
         }
     }
 }

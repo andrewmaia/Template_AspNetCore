@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Api.Extensions;
+namespace ProjectName.Api.Extensions;
 
 public static class ApplicationInsightsExtensions
 {

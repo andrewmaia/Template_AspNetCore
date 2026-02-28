@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectName.Application.Common.Events;
 using ProjectName.Application.EventHandlers;

@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Common;
+using ProjectName.Application.Common;
 
 namespace ProjectName.Application.UseCases.CreateOrder;
 public class CreateOrderResponse : ResultResponse

@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Api.Contracts;
+namespace ProjectName.Api.Contracts;
 
 /// <summary>
 /// Generic API response wrapper.

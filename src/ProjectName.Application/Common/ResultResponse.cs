@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.Common;
+namespace ProjectName.Application.Common;
 
 public abstract class ResultResponse
 {

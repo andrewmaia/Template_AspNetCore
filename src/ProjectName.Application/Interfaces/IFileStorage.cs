@@ -1,4 +1,4 @@
-﻿
+
 namespace ProjectName.Application.Interfaces;
 
 public interface IFileStorage

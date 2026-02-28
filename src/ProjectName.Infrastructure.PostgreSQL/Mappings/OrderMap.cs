@@ -1,13 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+using ProjectName.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ProjectName.Infrastructure.PostgreSQL.Entities;
 
 
 namespace ProjectName.Infrastructure.PostgreSQL.Mappings;
 
-internal class OrderMap : IEntityTypeConfiguration<OrderEntity>
+internal class OrderMap : IEntityTypeConfiguration<Order>
 {
-    public void Configure(EntityTypeBuilder<OrderEntity> builder)
+    public void Configure(EntityTypeBuilder<Order> builder)
     {
         builder.ToTable("Order");
         builder.HasKey(x => x.Id);

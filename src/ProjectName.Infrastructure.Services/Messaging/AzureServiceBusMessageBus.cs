@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using ProjectName.Application.Interfaces;
 using System.Text.Json;
 using Azure.Messaging.ServiceBus;

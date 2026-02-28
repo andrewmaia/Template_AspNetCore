@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Infrastructure.Services.Storage;
+namespace ProjectName.Infrastructure.Services.Storage;
 
 public sealed class AzureBlobStorageOptions
 {

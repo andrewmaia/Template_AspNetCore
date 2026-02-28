@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.ExternalServices.PostalCode;
+namespace ProjectName.Application.ExternalServices.PostalCode;
 public class PostalCodeResult
 {
     public string Street { get; init; } = default!;

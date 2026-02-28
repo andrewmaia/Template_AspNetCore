@@ -1,4 +1,4 @@
-﻿
+
 namespace ProjectName.Domain.Services;
 public class OrderDomainService
 {

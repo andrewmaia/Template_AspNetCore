@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.Messaging;
+namespace ProjectName.Application.Messaging;
 
 public sealed class OrderPaidMessage
 {

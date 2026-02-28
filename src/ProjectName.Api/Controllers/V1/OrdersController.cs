@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using ProjectName.Api.Contracts;
 using ProjectName.Api.Contracts.Orders;
 using ProjectName.Api.Extensions;

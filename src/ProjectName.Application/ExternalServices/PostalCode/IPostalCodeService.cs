@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.ExternalServices.PostalCode;
+namespace ProjectName.Application.ExternalServices.PostalCode;
 public interface IPostalCodeService
 {
     Task<PostalCodeResult?> GetByCodeAsync(string postalCode);

@@ -1,4 +1,4 @@
-﻿using ProjectName.Domain.Entities;
+using ProjectName.Domain.Entities;
 using ProjectName.Domain.Enums;
 
 namespace ProjectName.Tests.UnitTests.Domain.Entities;

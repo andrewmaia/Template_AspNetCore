@@ -1,40 +1,34 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ProjectName.Application.Repositories;
 using ProjectName.Domain.Entities;
 using ProjectName.Domain.Enums;
-using ProjectName.Infrastructure.PostgreSQL.Entities;
 
 namespace ProjectName.Tests.Integration.Application.Repositories;
 
 public class OrderRepositoryInMemory : IOrderRepository
 {
-    private readonly DbSet<OrderEntity> _orders;
-
-    private Order ToDomain(OrderEntity entity) => new Order(entity.Id, (OrderStatus)entity.Status, entity.TotalAmount);
-
-    private OrderEntity ToEntity(Order domain) => new OrderEntity(domain.Id, domain.Status, domain.TotalAmount);
+    private readonly DbSet<Order> _orders;
 
     public OrderRepositoryInMemory(DbContext context)
     {
-        _orders = context.Set<OrderEntity>();
+        _orders = context.Set<Order>();
     }
 
     public void Add(Order order)
     {
-        _orders.Add(ToEntity(order));
+        _orders.Add(order);
     }
 
     public async Task<Order?> GetByIdAsync(Guid id)
     {
         var entity = await _orders.FindAsync(id);
-        return entity == null ? null : ToDomain(entity);
+        return entity;
     }
 
     public IEnumerable<Order> GetOpenOrders()
     {
         return _orders
-            .Where(o => o.Status == (int)OrderStatus.Open)
-            .Select(ToDomain)
+            .Where(o => o.Status == OrderStatus.Open)
             .ToList();
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ProjectName.ExternalServices.ViaCEP.Responses;
+namespace ProjectName.ExternalServices.ViaCEP.Responses;
 public class ViaCepResponse
 {
     public string? Logradouro { get; set; }

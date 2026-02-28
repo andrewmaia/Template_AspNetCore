@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Api.Contracts.Orders;
+namespace ProjectName.Api.Contracts.Orders;
 
 /// <summary>
 /// Data for creating a new order.

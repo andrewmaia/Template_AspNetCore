@@ -1,4 +1,4 @@
-﻿using ProjectName.Domain.Services;
+using ProjectName.Domain.Services;
 
 
 namespace ProjectName.Tests.UnitTests.Domain.Services;

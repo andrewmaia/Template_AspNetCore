@@ -1,3 +1,3 @@
-Serviços de domínio encapsulam regras de negócio que não pertencem a uma única entidade ou que envolvem mais de uma entidade, mantendo as entidades focadas apenas em seu próprio estado.
+Serviï¿½os de domï¿½nio encapsulam regras de negï¿½cio que nï¿½o pertencem a uma ï¿½nica entidade ou que envolvem mais de uma entidade, mantendo as entidades focadas apenas em seu prï¿½prio estado.
 
-Exemplo: cálculo de descontos, validações complexas ou criação de objetos com regras específicas.
+Exemplo: cï¿½lculo de descontos, validaï¿½ï¿½es complexas ou criaï¿½ï¿½o de objetos com regras especï¿½ficas.

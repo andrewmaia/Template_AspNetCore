@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Domain.Enums;
+namespace ProjectName.Domain.Enums;
 
 public enum OrderStatus
 {

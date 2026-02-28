@@ -1,8 +1,7 @@
-﻿using ProjectName.Application.Repositories;
+using ProjectName.Application.Repositories;
 using ProjectName.Domain.Entities;
 using ProjectName.Domain.Enums;
 using ProjectName.Infrastructure.PostgreSQL.Context;
-using ProjectName.Infrastructure.PostgreSQL.Entities;
 
 namespace ProjectName.Infrastructure.PostgreSQL.Repositories;
 
@@ -15,27 +14,21 @@ public class OrderRepository: IOrderRepository
         _db = db;
     }
 
-    private Order ToDomain(OrderEntity entity) => new Order(entity.Id,(OrderStatus)entity.Status,entity.TotalAmount);
-
-    private OrderEntity ToEntity(Order domain)=> new OrderEntity (domain.Id,domain.Status, domain.TotalAmount);
-
     public void Add(Order order)
     {
-        var entity = ToEntity(order);
-        _db.Orders.Add(entity);
+        _db.Orders.Add(order);
     }
 
     public async Task<Order?> GetByIdAsync(Guid id)
     {
         var entity = await _db.Orders.FindAsync(id);
-        return entity == null ? null : ToDomain(entity);
+        return entity;
     }
 
     public IEnumerable<Order> GetOpenOrders()
     {
         return _db.Orders
-            .Where(o => o.Status == (int)OrderStatus.Open)
-            .Select(ToDomain)
+            .Where(o => o.Status == OrderStatus.Open)
             .ToList();
     }
 }

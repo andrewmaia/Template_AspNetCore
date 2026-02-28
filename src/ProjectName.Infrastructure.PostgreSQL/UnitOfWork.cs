@@ -1,4 +1,4 @@
-﻿using ProjectName.Application.Interfaces;
+using ProjectName.Application.Interfaces;
 using ProjectName.Infrastructure.PostgreSQL.Context;
 
 

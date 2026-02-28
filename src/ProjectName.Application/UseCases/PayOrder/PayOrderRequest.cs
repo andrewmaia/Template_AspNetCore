@@ -1,4 +1,4 @@
-﻿namespace ProjectName.Application.UseCases.PayOrder;
+namespace ProjectName.Application.UseCases.PayOrder;
 public class PayOrderRequest
 {
     public Guid OrderId { get; }

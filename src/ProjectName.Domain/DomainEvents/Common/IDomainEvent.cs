@@ -1,2 +1,2 @@
-﻿namespace ProjectName.Domain.DomainEvents.Common;
+namespace ProjectName.Domain.DomainEvents.Common;
 public interface IDomainEvent;

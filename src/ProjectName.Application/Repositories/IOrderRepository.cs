@@ -1,4 +1,4 @@
-﻿using ProjectName.Domain.Entities;
+using ProjectName.Domain.Entities;
 
 namespace ProjectName.Application.Repositories;
 
