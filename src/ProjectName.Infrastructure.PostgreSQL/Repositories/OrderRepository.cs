@@ -28,7 +28,7 @@ public class OrderRepository: IOrderRepository
     public IEnumerable<Order> GetOpenOrders()
     {
         return _db.Orders
-            .Where(o => o.Status == OrderStatus.Open)
             .ToList();
+            //.Where(o => o.Status == OrderStatus.Open);
     }
 }

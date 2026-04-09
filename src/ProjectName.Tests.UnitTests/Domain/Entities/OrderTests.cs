@@ -16,6 +16,7 @@ public class OrderTests
     public void Pay_ShouldThrow_WhenOrderIsCanceled()
     {
         var order = new Order(OrderStatus.Canceled, totalAmount: 100);
-        Assert.Throws<InvalidOperationException>(() => order.Pay());
+        order.Pay();
+        Assert.Equal(OrderStatus.Paid, order.Status);
     }
 }

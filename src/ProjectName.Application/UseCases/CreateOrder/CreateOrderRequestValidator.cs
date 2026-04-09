@@ -7,7 +7,7 @@ public class CreateOrderRequestValidator
     public CreateOrderRequestValidator()
     {
         RuleFor(x => x.TotalAmount)
-            .GreaterThan(0)
-            .WithMessage("TotalAmount must be greater than zero");
+            .GreaterThanOrEqualTo(0)
+            .WithMessage("TotalAmount must be zero or greater");
     }
 }
