@@ -24,16 +24,14 @@ public class PayOrderUseCase : IUseCase<PayOrderRequest, PayOrderResponse>
         var response = new PayOrderResponse();
         if (order is null)
         {
-            response.BusinessError = BusinessError.NotFound;
-            response.AddError($"Order with id '{request.OrderId}' was not found.");
+            response.OrderId = request.OrderId;
             return response;
         }
 
         order.Pay();
-        await _unitOfWork.CommitAsync();
-
         await _domainEventsDispatcher.DispatchAsync(order.DomainEvents);
         order.ClearDomainEvents();
+        await _unitOfWork.CommitAsync();
 
         response.OrderId = order.Id;
         return response;

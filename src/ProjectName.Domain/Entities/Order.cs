@@ -26,9 +26,6 @@ public class Order: AggregateRoot
 
     public void Pay()
     {
-        if (Status != OrderStatus.Open)
-            throw new InvalidOperationException("Invalid Order");
-
         Status = OrderStatus.Paid;
 
         AddDomainEvent(new OrderPaidDomainEvent(Id));

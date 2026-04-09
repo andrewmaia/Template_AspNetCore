@@ -29,13 +29,14 @@ public class OrdersController : ControllerBase
     [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid data", typeof(ApiResponse))]
     public async Task<IActionResult> Create([FromBody] CreateOrderApiRequest apiRequest)
     {
-        var request = new CreateOrderRequest(apiRequest.TotalAmount);
+        var totalAmount = Math.Abs(apiRequest.TotalAmount);
+        var request = new CreateOrderRequest(totalAmount);
         var result = await _executor.ExecuteAsync<CreateOrderRequest, CreateOrderResponse> (request);
 
         if (!result.IsSuccess)
             return BadRequest(result.ToApiResponse());
 
-        return Created(string.Empty, result.ToApiResponse());
+        return Ok(result.ToApiResponse());
     }
 
     [HttpPost("Pay")]
